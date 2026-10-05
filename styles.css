@@ -215,22 +215,22 @@ h2 {
 
 .clear-completed-button {
   padding: 7px 10px;
-  border: 1px solid #e3e7df;
+  border: 1px solid #b42318;
   border-radius: 8px;
-  background: #fff;
-  color: #657668;
+  background: #b42318;
+  color: #fff;
   font-size: 0.76rem;
   transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
 }
 
 .clear-completed-button:hover {
-  border-color: #d8e4d5;
-  background: #f4f7f1;
-  color: #304d37;
+  border-color: #912018;
+  background: #912018;
+  color: #fff;
 }
 
 .clear-completed-button:focus-visible {
-  outline: 2px solid #718875;
+  outline: 2px solid #b42318;
   outline-offset: 2px;
 }
 
