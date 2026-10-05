@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Un petit gestionnaire de tâches pour expérimenter avec Copilot."
+    />
+    <title>Ma liste — Copilot Sandbox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <p class="eyebrow">COPILOT SANDBOX</p>
+        <h1>Une chose à la fois<span>.</span></h1>
+        <p class="intro">Une petite liste pour donner vie à tes idées.</p>
+      </header>
+
+      <section class="task-card" aria-labelledby="list-heading">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">TON ESPACE</p>
+            <h2 id="list-heading">Ma liste</h2>
+          </div>
+          <span class="task-count" id="task-count">0 tâche</span>
+        </div>
+
+        <form class="add-form" id="add-form">
+          <label class="visually-hidden" for="task-input">Nouvelle tâche</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="120"
+            placeholder="Ex. : imaginer une nouvelle fonctionnalité"
+            autocomplete="off"
+            required
+          />
+          <button class="add-button" type="submit" aria-label="Ajouter la tâche">
+            <span aria-hidden="true">+</span>
+          </button>
+        </form>
+
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+
+        <div class="list-toolbar">
+          <p id="list-summary">Les petites étapes font les grands projets.</p>
+          <div class="filters" role="group" aria-label="Filtrer les tâches">
+            <button class="filter-button is-selected" type="button" data-filter="all" aria-pressed="true">
+              Tout
+            </button>
+            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">
+              À faire
+            </button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">
+              Terminées
+            </button>
+          </div>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Liste des tâches"></ul>
+        <p class="empty-state" id="empty-state">Ta liste est toute légère. Ajoute ta première tâche !</p>
+      </section>
+
+      <footer class="page-footer">Fait pour essayer, apprendre et recommencer.</footer>
+    </main>
+  </body>
+</html>
