@@ -15,7 +15,7 @@
 }
 
 body {
-  min-width: 320px;
+  min-width: 400px;
   min-height: 100vh;
   margin: 0;
   background:
@@ -205,6 +205,37 @@ h2 {
   background: #fff;
   color: #304d37;
   box-shadow: 0 1px 3px rgba(37, 43, 37, 0.1);
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 10px;
+}
+
+.clear-completed-button {
+  padding: 7px 10px;
+  border: 1px solid #e3e7df;
+  border-radius: 8px;
+  background: #fff;
+  color: #657668;
+  font-size: 0.76rem;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+}
+
+.clear-completed-button:hover {
+  border-color: #d8e4d5;
+  background: #f4f7f1;
+  color: #304d37;
+}
+
+.clear-completed-button:focus-visible {
+  outline: 2px solid #718875;
+  outline-offset: 2px;
+}
+
+.clear-completed-button[hidden] {
+  display: none;
 }
 
 .task-list {

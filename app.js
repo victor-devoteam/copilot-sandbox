@@ -8,6 +8,7 @@ const count = document.querySelector("#task-count");
 const summary = document.querySelector("#list-summary");
 const statusMessage = document.querySelector("#status-message");
 const filterButtons = document.querySelectorAll("[data-filter]");
+const clearCompletedButton = document.querySelector("#clear-completed");
 
 let tasks = loadTasks();
 let activeFilter = "all";
@@ -93,14 +94,30 @@ function renderTasks() {
 
   const remaining = tasks.filter((task) => !task.completed).length;
   count.textContent = `${tasks.length} tâche${tasks.length === 1 ? "" : "s"}`;
+  clearCompletedButton.hidden = remaining === tasks.length;
   summary.textContent =
     tasks.length === 0
       ? "Les petites étapes font les grands projets."
       : remaining === 0
         ? "Tout est terminé, beau travail !"
         : `${remaining} tâche${remaining === 1 ? "" : "s"} à faire`;
-  emptyState.hidden = getVisibleTasks().length > 0;
+  const visibleTasks = getVisibleTasks();
+  emptyState.hidden = visibleTasks.length > 0;
+  if (!emptyState.hidden) {
+    emptyState.textContent =
+      tasks.length === 0
+        ? "Ta liste est toute légère. Ajoute ta première tâche !"
+        : activeFilter === "completed"
+          ? "Aucune tâche terminée pour le moment."
+          : "Aucune tâche à faire pour le moment.";
+  }
 }
+
+clearCompletedButton.addEventListener("click", () => {
+  tasks = tasks.filter((task) => !task.completed);
+  saveTasks();
+  renderTasks();
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();

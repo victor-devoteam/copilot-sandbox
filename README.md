@@ -2,6 +2,10 @@
 
 Un mini gestionnaire de tâches en HTML, CSS et JavaScript pour tester des idées et coder avec Copilot. Pas de framework, de serveur ni de dépendance à installer.
 
+## Apprendre Copilot en pratiquant
+
+Suis le [parcours pratique GitHub Copilot](docs/parcours-copilot.md) : prompts et contexte, modifications ciblées, tests de non-régression, recherche de bugs, instructions du dépôt, agents et bonnes pratiques de pull request.
+
 ## Lancer l'application
 
 Ouvre `index.html` dans ton navigateur. Les tâches sont enregistrées dans le stockage local du navigateur.
@@ -11,6 +15,7 @@ Ouvre `index.html` dans ton navigateur. Les tâches sont enregistrées dans le s
 - Ajouter une tâche
 - La marquer comme terminée ou à faire
 - Filtrer les tâches (tout, à faire, terminées)
+- Effacer toutes les tâches terminées
 - Supprimer une tâche
 - Retrouver la liste après rechargement de la page
 
